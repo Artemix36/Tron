@@ -5,23 +5,26 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Policy;
 
 namespace Tron
 {
     internal class client
     {
-        public static void Connect(IPEndPoint IPEnd)
+
+        public static async void Connect(IPEndPoint IPEnd)
         {
-            using (Socket client_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
                 try
                 {
-                client_socket.ConnectAsync(IPEnd);
-                Console.WriteLine(client_socket.LocalEndPoint);
+                    await socket.ConnectAsync(IPEnd);
+                    Console.WriteLine($"Подключение к {IPEnd} установлено");
                 }
-                catch (Exception error)
+                catch (SocketException ex)
                 {
-                    Console.WriteLine(error.Message);
+                    Console.WriteLine(ex.ToString());
+                    throw ex;
                 }
             }
         }
