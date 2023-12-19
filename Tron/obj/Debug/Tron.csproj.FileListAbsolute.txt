@@ -1,0 +1,7 @@
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\bin\Debug\Tron.exe.config
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\bin\Debug\Tron.exe
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\bin\Debug\Tron.pdb
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\obj\Debug\Tron.csproj.AssemblyReference.cache
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\obj\Debug\Tron.csproj.CoreCompileInputs.cache
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\obj\Debug\Tron.exe
+C:\Users\artem\source\repos\HW_picker_bot\Tron\Tron\obj\Debug\Tron.pdb

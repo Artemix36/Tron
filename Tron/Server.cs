@@ -10,21 +10,22 @@ namespace Tron
 {
     internal class Server
     {
-        public static void Host(IPEndPoint IPEnd)
+        public static async void Host(IPEndPoint IPEnd)
         {
-            using (Socket client_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            using (Socket server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
-                client_socket.Bind(IPEnd);
-                Console.WriteLine(client_socket.LocalEndPoint);
-                client_socket.Listen(1);
                 try
                 {
-                    client_socket.AcceptAsync();
+                    server_socket.Bind(IPEnd);
+                    Console.WriteLine(server_socket.LocalEndPoint);
+                    server_socket.Listen(1000);
+                    await server_socket.AcceptAsync();
+                    Console.WriteLine("Client connected");
                 }
-                catch(Exception error)
-                {
-                    Console.WriteLine(error.Message);
+                catch (Exception ex) { 
+                    Console.WriteLine(ex.ToString()); 
                 }
+
             }
         }
     }
